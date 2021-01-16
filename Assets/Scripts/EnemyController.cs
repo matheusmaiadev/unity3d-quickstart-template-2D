@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     private PlayerController player;
+    private bool isCollided = false; //Fix double collider event bug
 
     // Start is called before the first frame update
     void Start()
@@ -14,8 +15,12 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        this.player.Damage();
-        Destroy(gameObject);
+        if(!isCollided){
+            this.isCollided = true;
+            this.player.Damage();
+            Destroy(gameObject);
+        }
+
     }
 
 }
