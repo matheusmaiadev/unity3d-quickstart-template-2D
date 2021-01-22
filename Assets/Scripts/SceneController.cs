@@ -13,11 +13,15 @@ public class SceneController : MonoBehaviour
 
     
     public void Phase(int phaseNumber){
-        SceneManager.LoadScene("Phase-" + phaseNumber);
+        if(phaseNumber == -1) Lose();
+        else if(phaseNumber == -2) Win();
+        else if(phaseNumber == -3) Menu();
+        else SceneManager.LoadScene("Phase-" + phaseNumber);
+
     }
 
     public void Lose(){
-        SceneManager.LoadScene("DefeatScene");
+        SceneManager.LoadScene("DefeatScene"); 
 
     }
 

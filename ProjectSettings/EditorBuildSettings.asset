@@ -9,18 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/MainMenuScene.unity
     guid: ca391f3304a1ec94b85f633cd188d9eb
   - enabled: 1
+    path: Assets/Scenes/Phases/Phase-1.unity
+    guid: f111739cca580a64d81041b1a256e326
+  - enabled: 1
+    path: Assets/Scenes/Phases/Phase-2.unity
+    guid: 104b0d14871d44f4881963af94f49350
+  - enabled: 1
+    path: Assets/Scenes/Phases/Phase-3.unity
+    guid: d30fbee988f498842a6e22beea9f1786
+  - enabled: 1
     path: Assets/Scenes/Menu/VictoryScene.unity
     guid: 14165ddad2c1e6b4b973eddeeb9b6f24
   - enabled: 1
     path: Assets/Scenes/Menu/DefeatScene.unity
     guid: 60d8e5728ca49384496a8b849659edd6
-  - enabled: 1
-    path: Assets/Scenes/Phases/Phase-1.unity
-    guid: f111739cca580a64d81041b1a256e326
-  - enabled: 1
-    path: Assets/Scenes/Phases/Phase-2.unity
-    guid: 1154c97f1f4bc2947a44f09449c2dfd0
-  - enabled: 1
-    path: Assets/Scenes/Phases/Phase-3.unity
-    guid: af9f2a55423d14c4480862649a5b0e8e
   m_configObjects: {}

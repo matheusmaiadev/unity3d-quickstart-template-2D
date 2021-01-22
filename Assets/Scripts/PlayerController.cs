@@ -9,9 +9,12 @@ public class PlayerController : MonoBehaviour
     private int health;
     public int maxhealth = 5;
 
+    private int coins = 0;
+
     void Start() { 
         this.health = this.maxhealth;
     }
+    
 
     // Setters
     public void Damage(){
@@ -22,8 +25,18 @@ public class PlayerController : MonoBehaviour
         if (this.health < maxhealth) this.health += 1;
     }
 
+    
+    public void AddCoin(){
+        this.coins += 1;
+    }
+
     //  Getters
     public int getHealth(){
         return this.health;
+    }
+
+    
+    public int getCoins(){
+        return this.coins;
     }
 }

@@ -23,6 +23,7 @@ public class HeroKnight : MonoBehaviour {
     private float               m_timeSinceAttack = 0.0f;
     private float               m_delayToIdle = 0.0f;
 
+    private  Transform mainRenderer;
 
     // Use this for initialization
     void Start ()
@@ -34,6 +35,9 @@ public class HeroKnight : MonoBehaviour {
         m_wallSensorR2 = transform.Find("WallSensor_R2").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<Sensor_HeroKnight>();
+
+        mainRenderer =  GameObject.Find("Chara_13").GetComponent<Transform>();
+
     }
 
     // Update is called once per frame
@@ -63,12 +67,21 @@ public class HeroKnight : MonoBehaviour {
         if (inputX > 0)
         {
             GetComponent<SpriteRenderer>().flipX = false;
+            mainRenderer.localScale = new Vector3(
+                    -0.78863f, 
+                    mainRenderer.localScale.y, 
+                    mainRenderer.localScale.z);
             m_facingDirection = 1;
         }
             
         else if (inputX < 0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
+            mainRenderer.localScale = new Vector3(
+                0.78863f, 
+                mainRenderer.localScale.y, 
+                mainRenderer.localScale.z);
+
             m_facingDirection = -1;
         }
 
@@ -86,13 +99,13 @@ public class HeroKnight : MonoBehaviour {
         //Death
         if (Input.GetKeyDown("e"))
         {
-            m_animator.SetBool("noBlood", m_noBlood);
-            m_animator.SetTrigger("Death");
+            //m_animator.SetBool("noBlood", m_noBlood);
+            //m_animator.SetTrigger("Death");
         }
             
         //Hurt
-        else if (Input.GetKeyDown("q"))
-            m_animator.SetTrigger("Hurt");
+        else if (Input.GetKeyDown("q"));
+            //m_animator.SetTrigger("Hurt");
 
         //Attack
         else if(Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f)
@@ -108,7 +121,7 @@ public class HeroKnight : MonoBehaviour {
                 m_currentAttack = 1;
 
             // Call one of three attack animations "Attack1", "Attack2", "Attack3"
-            m_animator.SetTrigger("Attack" + m_currentAttack);
+           // m_animator.SetTrigger("Attack" + m_currentAttack);
 
             // Reset timer
             m_timeSinceAttack = 0.0f;
@@ -117,19 +130,19 @@ public class HeroKnight : MonoBehaviour {
         // Block
         else if (Input.GetMouseButtonDown(1))
         {
-            m_animator.SetTrigger("Block");
-            m_animator.SetBool("IdleBlock", true);
+            //m_animator.SetTrigger("Block");
+            //m_animator.SetBool("IdleBlock", true);
         }
 
-        else if (Input.GetMouseButtonUp(1))
-            m_animator.SetBool("IdleBlock", false);
+        else if (Input.GetMouseButtonUp(1));
+            //m_animator.SetBool("IdleBlock", false);
 
         // Roll
         else if (Input.GetKeyDown("left shift") && !m_rolling)
         {
-            m_rolling = true;
-            m_animator.SetTrigger("Roll");
-            m_body2d.velocity = new Vector2(m_facingDirection * m_rollForce, m_body2d.velocity.y);
+            //m_rolling = true;
+            //m_animator.SetTrigger("Roll");
+            //m_body2d.velocity = new Vector2(m_facingDirection * m_rollForce, m_body2d.velocity.y);
         }
             
 
